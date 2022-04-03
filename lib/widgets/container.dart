@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ScreenContainer extends StatelessWidget {
-  ScreenContainer({Key? key, Widget? childd}) : super(key : key);
+  const ScreenContainer({Key? key, required this.child}) : super(key : key);
 
-  final Widget childd = SafeArea(child: Container());
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class ScreenContainer extends StatelessWidget {
             Expanded(
               child: Scaffold(
                 backgroundColor: Theme.of(context).backgroundColor,
-                body: childd,
+                body: child,
               ),
             )
           ],
