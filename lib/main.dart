@@ -26,8 +26,13 @@ class App extends StatelessWidget {
             // is not restarted.
             primaryColor: Colors.white,
             textTheme: const TextTheme(
-                titleMedium: TextStyle(color: Colors.white, fontSize: 40)),
-            backgroundColor: Colors.black45),
+              titleSmall: TextStyle(color: Colors.white, fontSize: 25),
+              titleMedium: TextStyle(color: Colors.white, fontSize: 40),
+              bodySmall: TextStyle(color: Colors.white, fontSize: 20)
+            ),
+            backgroundColor: Colors.black45,
+            fontFamily: 'Montserrat'
+        ),
         initialRoute: SearchScreen.route,
         routes: {
           '/search': (context) => const SearchScreen(),

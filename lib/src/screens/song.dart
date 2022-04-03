@@ -5,16 +5,32 @@ class SongScreen extends StatelessWidget {
 
   static const String route = "/song";
 
-  @override
-  Widget build(BuildContext context) {
+  onPress(BuildContext context) {
+    Navigator.pop(context);  
+  }
+
+  Widget testToStrongScreen(BuildContext context) {
     ThemeData currentTheme = Theme.of(context);
     Text text = Text('Song Screen', style: currentTheme.textTheme.titleMedium);
+    return ElevatedButton(onPressed: () => { onPress(context) }, child: text);
+  }
 
+  @override
+  Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        backgroundColor: Theme.of(context).backgroundColor,
-        body: Center(child: text),
-      ),
+      child: Container(
+        padding: const EdgeInsets.all(10.0),
+        child: Row(
+          children: [
+            Expanded(
+              child: Scaffold(
+                backgroundColor: Theme.of(context).backgroundColor,
+                body: Center(child: testToStrongScreen(context)),
+              )
+            )
+          ],
+        ),
+      )
     );
   }
 }
